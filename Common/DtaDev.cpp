@@ -71,8 +71,23 @@ uint8_t DtaDev::isPresent()
 }
 uint8_t DtaDev::MBREnabled()
 {
-	LOG(D1) << "Entering DtaDev::MBRENabled" << (uint16_t) disk_info.OPAL20;
+	LOG(D1) << "Entering DtaDev::MBRENabled" << (uint16_t)disk_info.Locking_MBREnabled;
 	return disk_info.Locking_MBREnabled;
+}
+uint8_t DtaDev::MBRDone()
+{
+	LOG(D1) << "Entering DtaDev::MBRDone" << (uint16_t)disk_info.Locking_MBRDone;
+	return disk_info.Locking_MBRDone;
+}
+uint8_t DtaDev::Locked()
+{
+	LOG(D1) << "Entering DtaDev::Locked" << (uint16_t)disk_info.Locking_locked;
+	return disk_info.Locking_locked;
+}
+uint8_t DtaDev::LockingEnabled()
+{
+	LOG(D1) << "Entering DtaDev::LockingEnabled" << (uint16_t)disk_info.Locking_lockingEnabled;
+	return disk_info.Locking_lockingEnabled;
 }
 char *DtaDev::getFirmwareRev()
 {
